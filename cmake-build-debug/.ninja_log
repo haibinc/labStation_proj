@@ -1,0 +1,10 @@
+# ninja log v5
+22	481	6861017287062805	CMakeFiles/labstation.dir/functions.cpp.obj	a90b9bd6344e0178
+3	471	6861017286958649	CMakeFiles/labstation.dir/main.cpp.obj	1311b3e6465389c5
+481	619	6861017288411923	labstation.exe	f7f2af293a727ac6
+3	411	6861017455083344	CMakeFiles/labstation.dir/main.cpp.obj	1311b3e6465389c5
+411	548	6861017456427505	labstation.exe	f7f2af293a727ac6
+4	432	6861017827528434	CMakeFiles/labstation.dir/functions.cpp.obj	a90b9bd6344e0178
+433	574	6861017828937078	labstation.exe	f7f2af293a727ac6
+4	451	6861018480579185	CMakeFiles/labstation.dir/functions.cpp.obj	a90b9bd6344e0178
+451	591	6861018481958061	labstation.exe	f7f2af293a727ac6
