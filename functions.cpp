@@ -51,27 +51,42 @@ void checkArray(int arraySize[], int size, int &labNum, int &stationNum)
 
 void loginArray(std::string *ptrArr[], int arraySize[], int size, int labNum, int stationNum, int idNum)
 {
-    std::string currentUser;
+    bool doubleDip = false;
     for (int i = 0; i < size; ++i)
     {
         for (int j = 0; j < arraySize[i]; ++j)
         {
-            if(((labNum - 1) == i) && ((stationNum - 1) == j))
+            if(ptrArr[i][j] == std::to_string(idNum))
             {
-                if(ptrArr[i][j] != "empty ")
+                std::cout << "You're already accessing lab " << i+1
+                << " station " << j+1 << std::endl;
+                doubleDip = true;
+            }
+        }
+    }
+    if(doubleDip == false)
+    {
+        for (int i = 0; i < size; ++i)
+        {
+            for (int j = 0; j < arraySize[i]; ++j)
+            {
+                if(((labNum - 1) == i) && ((stationNum - 1) == j))
                 {
-                    std::cout << "This station is being occupied by " << ptrArr[i][j] << std::endl;
-                }
-                else
-                {
-                    ptrArr[i][j] = std::to_string(idNum);
+                    if(ptrArr[i][j] != "empty ")
+                    {
+                        std::cout << "This station is being occupied by " << ptrArr[i][j] << std::endl;
+                    }
+                    else
+                    {
+                        ptrArr[i][j] = std::to_string(idNum);
+                    }
                 }
             }
         }
     }
 }
 
-void deleteArray(std::string *ptrArr[], int arraySize[], int size, int idNum)
+void logoffArray(std::string *ptrArr[], int arraySize[], int size, int idNum)
 {
     bool userExist = false;
     for (int i = 0; i < size; ++i)
@@ -80,7 +95,7 @@ void deleteArray(std::string *ptrArr[], int arraySize[], int size, int idNum)
         {
             if(ptrArr[i][j] == std::to_string(idNum))
             {
-                ptrArr[i][j] = "empty";
+                ptrArr[i][j] = "empty ";
                 userExist = true;
             }
         }
@@ -132,7 +147,7 @@ void menu(std::string *ptrArr[], int arraySize[], int size, int labNum, int stat
         case 2:
             std::cout << "What is your id number:" << std::endl;
             std::cin >> idNum;
-            deleteArray(ptrArr, arraySize, size, idNum);
+            logoffArray(ptrArr, arraySize, size, idNum);
             printArray(ptrArr, arraySize, size);
             break;
         case 3:
