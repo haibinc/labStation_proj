@@ -6,7 +6,7 @@
 			[
 				{
 					"build" : ".",
-					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.22"
@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "labstation::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-labstation-Debug-60167ba38c985ebd3637.json",
+					"jsonFile" : "target-labstation-Debug-c8b89c4088217ea23b71.json",
 					"name" : "labstation",
 					"projectIndex" : 0
 				}
@@ -49,12 +49,12 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/swift/CLionProjects/labStation/cmake-build-debug",
-		"source" : "C:/Users/swift/CLionProjects/labStation"
+		"build" : "/Users/haibin/labStation_proj/cmake-build-debug",
+		"source" : "/Users/haibin/labStation_proj"
 	},
 	"version" : 
 	{
 		"major" : 2,
-		"minor" : 3
+		"minor" : 4
 	}
 }
