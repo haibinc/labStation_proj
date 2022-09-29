@@ -51,6 +51,7 @@ void checkArray(int arraySize[], int size, int &labNum, int &stationNum)
 
 void loginArray(std::string *ptrArr[], int arraySize[], int size, int labNum, int stationNum, int idNum)
 {
+    std::string currentUser;
     for (int i = 0; i < size; ++i)
     {
         for (int j = 0; j < arraySize[i]; ++j)
@@ -59,12 +60,12 @@ void loginArray(std::string *ptrArr[], int arraySize[], int size, int labNum, in
             {
                 if(ptrArr[i][j] != "empty ")
                 {
-                    std::cout << "This station is being occupied by another user" << std::endl;
+                    std::cout << "This station is being occupied by " << ptrArr[i][j] << std::endl;
                 }
-            }
-            else
-            {
-                ptrArr[labNum - 1][stationNum - 1] = std::to_string(idNum);
+                else
+                {
+                    ptrArr[i][j] = std::to_string(idNum);
+                }
             }
         }
     }
@@ -72,6 +73,7 @@ void loginArray(std::string *ptrArr[], int arraySize[], int size, int labNum, in
 
 void deleteArray(std::string *ptrArr[], int arraySize[], int size, int idNum)
 {
+    bool userExist = false;
     for (int i = 0; i < size; ++i)
     {
         for (int j = 0; j < arraySize[i]; ++j)
@@ -79,13 +81,19 @@ void deleteArray(std::string *ptrArr[], int arraySize[], int size, int idNum)
             if(ptrArr[i][j] == std::to_string(idNum))
             {
                 ptrArr[i][j] = "empty";
+                userExist = true;
             }
         }
+    }
+    if(userExist == false)
+    {
+        std::cout << "The man ain't here." << std::endl;
     }
 }
 
 void searchId(std::string *ptrArr[], int arraySize[], int size, int idNum, int labNum, int stationNum)
 {
+    bool userExist = false;
     for (int i = 0; i < size; ++i)
     {
         for (int j = 0; j < arraySize[i]; ++j)
@@ -94,13 +102,13 @@ void searchId(std::string *ptrArr[], int arraySize[], int size, int idNum, int l
             {
                 std::cout << "Student ID: " << idNum << " is at lab " << i+1
                 << " and station " << j+1 << std::endl;
-            }
-            else
-            {
-                std::cout << "User does not exist" << std::endl;
-                menu(ptrArr, arraySize, size, labNum, stationNum, idNum);
+                userExist = true;
             }
         }
+    }
+    if(userExist == false)
+    {
+        std::cout << "None." << std::endl;
     }
 }
 
